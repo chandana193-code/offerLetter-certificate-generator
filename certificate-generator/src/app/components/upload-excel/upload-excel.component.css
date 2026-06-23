@@ -1,0 +1,15 @@
+.container{
+    width: 500px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+h2{
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+input{
+    padding: 10px;
+    border: 1px solid #ccc;
+}

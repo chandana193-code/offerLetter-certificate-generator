@@ -1,0 +1,33 @@
+<h2>Student List</h2>
+
+<table border="1">
+
+  <tr>
+    <th>Name</th>
+    <th>Registration ID</th>
+    <th>Role</th>
+    <th>Start Date</th>
+    <th>Duration</th>
+    <th>End Date</th>
+    <th>Certificate Generation</th>
+  </tr>
+
+  <tr *ngFor="let student of students">
+
+    <td>{{student.studentName}}</td>
+    <td>{{student.studentId}}</td>
+    <td>{{student.role}}</td>
+    <td>{{student.startDate}}</td>
+    <td>{{student.duration}}</td>
+    <td>{{student.endDate}}</td>
+     <td>
+      <button (click)="generateLetter(student)">
+        Generate
+      </button>
+
+      <button (click)="withoutStampgenerateLetter(student)">Without stamp</button>
+    </td>
+
+  </tr>
+
+</table>
