@@ -1,33 +1,69 @@
 <h2>Student List</h2>
 
-<table border="1">
+<div class="table-container">
 
-  <tr>
-    <th>Name</th>
-    <th>Registration ID</th>
-    <th>Role</th>
-    <th>Start Date</th>
-    <th>Duration</th>
-    <th>End Date</th>
-    <th>Certificate Generation</th>
-  </tr>
+<table>
 
-  <tr *ngFor="let student of students">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Registration ID</th>
+            <th>Role</th>
+            <th>Start Date</th>
+            <th>Duration</th>
+            <th>End Date</th>
+            <th>Certificate Generation</th>
+        </tr>
+    </thead>
 
-    <td>{{student.studentName}}</td>
-    <td>{{student.studentId}}</td>
-    <td>{{student.role}}</td>
-    <td>{{student.startDate}}</td>
-    <td>{{student.duration}}</td>
-    <td>{{student.endDate}}</td>
-     <td>
-      <button (click)="generateLetter(student)">
-        Generate
-      </button>
+    <tbody>
 
-      <button (click)="withoutStampgenerateLetter(student)">Without stamp</button>
-    </td>
+        <tr *ngFor="let student of students">
 
-  </tr>
+            <td data-label="Name">
+                {{student.studentName}}
+            </td>
+
+            <td data-label="Registration ID">
+                {{student.studentId}}
+            </td>
+
+            <td data-label="Role">
+                {{student.role}}
+            </td>
+
+            <td data-label="Start Date">
+                {{student.startDate}}
+            </td>
+
+            <td data-label="Duration">
+                {{student.duration}}
+            </td>
+
+            <td data-label="End Date">
+                {{student.endDate}}
+            </td>
+
+            <td data-label="Certificate">
+
+                <button
+                    class="generate-btn"
+                    (click)="generateLetter(student)">
+                    Generate
+                </button>
+
+                <button
+                    class="without-btn"
+                    (click)="withoutStampgenerateLetter(student)">
+                    Without Stamp
+                </button>
+
+            </td>
+
+        </tr>
+
+    </tbody>
 
 </table>
+
+</div>

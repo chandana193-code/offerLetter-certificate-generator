@@ -1,11 +1,19 @@
 <div class="container">
 
-  <h2>Upload Excel File</h2>
+    <div class="upload-card">
 
-  <input
-    type="file"
-    accept=".xlsx,.xls"
-    (change)="onFileSelected($event)"
-  >
+        <h2>📄 Upload Excel File</h2>
+
+        <p class="subtitle">
+            Select an Excel (.xlsx or .xls) file to upload student details.
+        </p>
+
+        <input
+            type="file"
+            accept=".xlsx,.xls"
+            (change)="onFileSelected($event)"
+        >
+
+    </div>
 
 </div>

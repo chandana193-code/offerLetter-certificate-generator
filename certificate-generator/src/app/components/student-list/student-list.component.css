@@ -1,27 +1,135 @@
 h2{
-    text-align: center;
-    margin-top: 20px;
+    text-align:center;
+    margin-top:20px;
+    color:#1f2937;
+}
+
+.table-container{
+    width:100%;
+    overflow-x:auto;
 }
 
 table{
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
+    width:90%;
+    min-width:900px;
+    margin:20px auto;
+    border-collapse:collapse;
+    background:#fff;
 }
 
 th{
-    background-color: #0d6efd;
-    color: white;
-    padding: 10px;
+    background:#0d6efd;
+    color:white;
+    padding:12px;
+    white-space:nowrap;
 }
 
 td{
-    padding: 10px;
-    text-align: center;
+    padding:12px;
+    text-align:center;
+    border:1px solid #ddd;
 }
 
-table,
 th,
 td{
-    border: 1px solid #ddd;
+    border:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f8f9fa;
+}
+
+tr:hover{
+    background:#eef5ff;
+}
+
+/* Buttons */
+
+.generate-btn,
+.without-btn{
+    padding:8px 14px;
+    border:none;
+    border-radius:6px;
+    color:white;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:500;
+    transition:.3s;
+    margin:4px;
+}
+
+.generate-btn{
+    background:#198754;
+}
+
+.generate-btn:hover{
+    background:#157347;
+}
+
+.without-btn{
+    background:#0d6efd;
+}
+
+.without-btn:hover{
+    background:#0b5ed7;
+}
+
+@media screen and (max-width:768px){
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr{
+        display:block;
+    }
+
+    thead{
+        display:none;
+    }
+
+    table{
+        min-width:100%;
+        width:100%;
+    }
+
+    tr{
+        margin:15px;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:10px;
+        background:#fff;
+        box-shadow:0 2px 8px rgba(0,0,0,.1);
+    }
+
+    td{
+        border:none;
+        border-bottom:1px solid #eee;
+        position:relative;
+        padding-left:45%;
+        text-align:right;
+        min-height:30px;
+    }
+
+    td:last-child{
+        border-bottom:none;
+    }
+
+    td::before{
+        content:attr(data-label);
+        position:absolute;
+        left:10px;
+        width:40%;
+        font-weight:bold;
+        text-align:left;
+        color:#0d6efd;
+    }
+
+    .generate-btn,
+    .without-btn{
+        width:100%;
+        margin-top:8px;
+    }
+
 }
