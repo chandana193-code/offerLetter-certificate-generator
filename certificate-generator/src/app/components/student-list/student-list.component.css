@@ -71,6 +71,29 @@ tr:hover{
 .without-btn:hover{
     background:#0b5ed7;
 }
+.search-box-wrapper{
+    position: relative;
+    width: 320px;
+}
+
+.search-icon{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.search-box{
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
 
 @media screen and (max-width:768px){
 
@@ -130,4 +153,12 @@ tr:hover{
         margin-top:8px;
     }
 
+     .search-container{
+        text-align:center;
+    }
+
+    .search-box{
+        width:100%;
+        max-width:300px;
+    }
 }

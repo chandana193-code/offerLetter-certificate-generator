@@ -1,31 +1,55 @@
 <h2>Student List</h2>
 
+<div class="search-container">
+
+    <div class="search-box-wrapper">
+
+        <i class="fa fa-search search-icon"></i>
+
+        <input
+            type="text"
+            placeholder="Search by Name, ID or Role..."
+            [(ngModel)]="searchText"
+            (input)="searchStudent()"
+            class="search-box">
+
+    </div>
+
+</div>
+
 <div class="table-container">
 
 <table>
 
     <thead>
         <tr>
+            <th>S.No</th>
             <th>Name</th>
+            <th>Last Name</th>
             <th>Registration ID</th>
             <th>Role</th>
             <th>Start Date</th>
             <th>Duration</th>
-            <!-- <th>End Date</th> -->
             <th>Certificate Generation</th>
         </tr>
     </thead>
 
     <tbody>
 
-        <tr *ngFor="let student of students">
+        <tr *ngFor="let student of filteredStudents; let i = index">
+
+            <td>{{ i + 1 }}</td>
 
             <td data-label="Name">
                 {{student.studentName}}
             </td>
 
+            <td>
+             {{student.lastName}}
+            </td>
+
             <td data-label="Registration ID">
-                {{student.StudentId}}
+                {{student.studentId}}
             </td>
 
             <td data-label="Role">
@@ -39,10 +63,6 @@
             <td data-label="Duration">
                 {{student.duration}}
             </td>
-
-            <!-- <td data-label="End Date">
-                {{student.endDate}}
-            </td> -->
 
             <td data-label="Certificate">
 

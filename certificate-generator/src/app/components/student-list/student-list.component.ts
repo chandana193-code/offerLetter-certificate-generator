@@ -9,31 +9,49 @@ import { WordService } from 'src/app/services/word.service';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent {
+students: any[] = [];
 
- students: any[] = [];
+  filteredStudents: any[] = [];
+
+  searchText: string = '';
 
   constructor(
-  private studentService: StudentService,
-  private wordService:WordService,
-  private withoutStamp: WithoutStampService
-) {}
+    private studentService: StudentService,
+    private wordService: WordService,
+    private withoutStamp: WithoutStampService
+  ) {}
 
   ngOnInit(): void {
 
-    this.students =
-      this.studentService.getStudents();
+    this.students = this.studentService.getStudents();
+
+    this.filteredStudents = [...this.students];
 
   }
 
-generateLetter(student:any){
+  searchStudent() {
 
-   this.wordService.generateWord(student);
+    const search = this.searchText.toLowerCase();
 
-}
+    this.filteredStudents = this.students.filter(student =>
 
-withoutStampgenerateLetter(student:any){
+      student.studentName?.toLowerCase().includes(search) ||
 
-   this.withoutStamp.generateWord(student);
+      student.lastName?.toLowerCase().includes(search) ||
 
-}
+      student.studentId?.toString().includes(search) ||
+
+      student.role?.toLowerCase().includes(search)
+
+    );
+
+  }
+
+  generateLetter(student: any) {
+    this.wordService.generateWord(student);
+  }
+
+  withoutStampgenerateLetter(student: any) {
+    this.withoutStamp.generateWord(student);
+  }
 }

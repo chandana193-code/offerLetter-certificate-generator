@@ -1,8 +1,10 @@
 export interface Student {
 
   studentName: string;
+  
+  lastName: string;
 
-  StudentId: string;
+  studentId: string;
 
   role: string;
 

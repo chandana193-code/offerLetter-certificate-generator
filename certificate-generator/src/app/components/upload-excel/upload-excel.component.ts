@@ -37,17 +37,36 @@ export class UploadExcelComponent {
 
       const data: any[] = XLSX.utils.sheet_to_json(sheet);
 
+      // const students = data.map(student => ({
+
+      //   ...student,
+
+      //   studentId: String(student.studentId),
+
+      //   startDate: this.excelDateToJSDate(student.startDate),
+
+      //   endDate: this.excelDateToJSDate(student.endDate)
+
+      // }));
+
+
       const students = data.map(student => ({
 
-        ...student,
+  studentName: student.studentName,
 
-        studentId: String(student.studentId),
+  lastName: student["Last Name (IN CAPITAL)"],
 
-        startDate: this.excelDateToJSDate(student.startDate),
+  studentId: String(student.StudentId),
 
-        endDate: this.excelDateToJSDate(student.endDate)
+  role: student.role,
 
-      }));
+  startDate: this.excelDateToJSDate(student.startDate),
+
+  endDate: this.excelDateToJSDate(student.endDate),
+
+  duration: student.duration
+
+}));
 
       console.log(students);
 

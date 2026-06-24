@@ -31,7 +31,8 @@ export class WordService {
       doc.render({
 
         studentName: student.studentName,
-        studentId: student.studentId,
+        lastName: student.lastName,
+        studentId: String(student.studentId),
         role: student.role,
         startDate: student.startDate,
         endDate: student.endDate,

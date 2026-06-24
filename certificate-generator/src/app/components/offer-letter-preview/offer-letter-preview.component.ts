@@ -89,6 +89,7 @@ pdf.save(`${this.student.studentName}_OfferLetter.pdf`);
 
 this.router.navigate(['/students']);
 
+
     });
 
   }
