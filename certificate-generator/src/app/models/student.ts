@@ -2,7 +2,7 @@ export interface Student {
 
   studentName: string;
 
-  studentId: string;
+  StudentId: string;
 
   role: string;
 
